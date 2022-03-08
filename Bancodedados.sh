@@ -57,7 +57,11 @@ CREATE TABLE public."final_cpgf" (
 "data" date NULL,
 "valor" decimal(20,2) NULL
 );"
+<<<<<<< HEAD
 #COPIA PARA TABELA TEMPORARIAGGG
+=======
+#Copying data to tmp table
+>>>>>>> 2c4f5588e5fa711d88f1d43936cc98f3a78a5ecd
 for ano in {17..21}
 do
 for mes in {01..12}
@@ -90,6 +94,7 @@ psql -U aml -d aml -c
 	cast(replace(valor, ',', '.' ) as decimal(20,2)) as valor
 	from tmp_cpgf;"
 }
+<<<<<<< HEAD
 
 cmds='downloadcpgf  tabelas tabelafinal Sair'
 
@@ -108,6 +113,25 @@ echo "Comando não encontrado."
 fi
 done
 
+=======
+
+cmds='downloadcpgf  tabelas tabelafinal Sair'
+
+select cmd in $cmds
+do
+if [ $cmd == 'Sair' ]
+then break
+elif [[ "$cmd" == "downloadcpgf" ]]; then
+downloadcpgf
+elif [[ "$cmd" == "tabelas" ]]; then
+tabelas
+elif [[ "$cmd" == "tabelafinal" ]]; then
+tabelafinal
+else
+echo "Comando não encontrado."
+fi
+done
+>>>>>>> 2c4f5588e5fa711d88f1d43936cc98f3a78a5ecd
 
 
 

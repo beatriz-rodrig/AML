@@ -92,7 +92,7 @@ psql -U aml -d aml -c
 	from tmp_cpgf;"
 }
 
-comandoss='downloadcpgf  tabelas tabelafinal Sair'
+comandos='downloadcpgf  tabelas tabelafinal Sair'
 
 select cmd in $comandos
 do
